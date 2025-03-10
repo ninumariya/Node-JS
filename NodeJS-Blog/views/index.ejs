@@ -1,0 +1,32 @@
+<div class="author">
+  <h1 class="author__heading">Hi, I am Ninu Sijo.</h1>
+  <p class="author__body">Let's read with me.</p>
+</div>
+
+<img src="/img/profileimg.jpg" alt="person looking out through window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+  <h2 class="articles__heading">My favorite books that I suggest to read</h2>
+
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%= post.title %></span>
+          <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+
+
+  <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+  <% } %>
+ 
+
+  
+
+
+
+</section>
